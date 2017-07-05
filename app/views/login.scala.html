@@ -1,0 +1,8 @@
+@(title: String, isLoggedIn: Boolean,profile: Profile, loginform: Form[views.formData.LoginFormData])
+    @import views.html.notLogged. layoutN
+<script src="@routes.Assets.versioned("js/custom.js")" type="text/javascript"></script>
+@layout(title, isLoggedIn, profile){@layoutN(isLoggedIn)} {
+    <div class="container">
+    @loginForm(  loginform("email"), loginform("password"),loginform)
+    </div>
+}

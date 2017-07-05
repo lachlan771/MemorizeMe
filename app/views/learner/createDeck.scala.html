@@ -1,0 +1,9 @@
+@(page: String, isLoggedIn: Boolean,profile: Profile,deckForm:Form[views.formData.DeckFormData])
+@import views.html.learner. layoutL
+@import views.html.learner. layoutL
+
+@layout(page, isLoggedIn, profile){@layoutL(isLoggedIn)} {
+    <div class="container">
+    @createDeckForm( deckForm("name"))
+    </div>
+}

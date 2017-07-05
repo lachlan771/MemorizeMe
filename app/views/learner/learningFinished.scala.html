@@ -1,0 +1,12 @@
+@(page: String, isLoggedIn: Boolean,profile: Profile)
+@import views.html.learner. layoutL
+
+@layout(page, isLoggedIn, profile){@layoutL(isLoggedIn)} {
+    <div class ="container">
+        <div class = "jumbotron">
+            <h1>You have finished your learning for today @profile.userName</h1>
+        </div>
+    </div>
+
+
+}

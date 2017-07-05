@@ -1,0 +1,24 @@
+@(page: String, isLoggedIn: Boolean,profile: Profile)
+@import views.html.learner. layoutL
+
+@layout(page, isLoggedIn, profile){@layoutL(isLoggedIn)} {
+    <div class ="container">
+        <div class = "jumbotron">
+            <h1><a href = "@routes.LearnController.learnAll()"><i class="glyphicon glyphicon"></i>
+                Learn All Decks</a></h1>
+        </div>
+    </div>
+    <div class ="container">
+        <div class = "jumbotron">
+            <h1><a href = "@routes.LearnController.learnDeck("@profile.id")"><i class="glyphicon glyphicon"></i>
+                Pick a single deck to learn</a> </h1>
+        </div>
+    </div>
+    <div class ="container">
+        <div class = "jumbotron">
+            <h1><a href = "@routes.LearnController.learnSettings("@profile.id")"><i class="glyphicon glyphicon"></i>
+                Learn Settings</a> </h1>
+        </div>
+    </div>
+
+    }

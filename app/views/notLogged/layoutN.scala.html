@@ -1,0 +1,24 @@
+@(isLoggedIn: Boolean)
+<ul class = "nav navbar-nav navbar-left">
+    @if(!isLoggedIn) {
+        <li><a href = "@routes.Application.login()"><i class="glyphicon glyphicon-book"></i>
+            Login</a></li>
+
+        <li><a href ="@routes.Application.register()"><i class="glyphicon glyphicon-plus"></i>
+            Register</a></li>
+
+        <li><a href ="@routes.Application.loginHelp()"><i class="glyphicon glyphicon-plus"></i>
+            Can't Login ?</a></li>
+
+    }@if(isLoggedIn) {
+    <li><a href = "@routes.LearnController.index()"><i class="glyphicon glyphicon-book"></i>
+        Learn Decks</a></li>
+
+    <li><a href ="@routes.Application.generate()"><i class="glyphicon glyphicon-plus"></i>
+        Generate</a></li>
+
+    <li><a href ="@routes.Application.templates()"><i class="glyphicon glyphicon-plus"></i>
+        Templates</a></li>
+
+}
+</ul>

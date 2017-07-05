@@ -1,0 +1,11 @@
+@(title: String, isLoggedIn: Boolean,profile: Profile, registerform: Form[views.formData.RegisterFormData])
+
+    <!---https://bootsnipp.com/snippets/featured/custom-login-registration-amp-forgot-password-->
+
+@import views.html.notLogged. layoutN
+    @layout(title, isLoggedIn, profile){@layoutN(isLoggedIn)} {
+
+    <div class="container">
+    @registerForm(registerform)
+    </div>
+}

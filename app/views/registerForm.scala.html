@@ -1,0 +1,74 @@
+@(form: Form[views.formData.RegisterFormData])
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- REGISTRATION FORM -->
+<div class="text-center" style="padding:50px 0">
+    <div class="logo">register</div>
+        <!-- Main Form -->
+    <div class="login-form-1">
+        @helper.form(routes.Application.postRegister(), 'role -> "form",'id ->"register-form",'class -> "text-left"){
+            <div class="login-form-main-message"></div>
+            <div class="main-login-form">
+                <div class="login-group">
+                    <div class="form-group @if(form("userName").hasErrors) {has-error}">
+                        <label for="reg_username" class="sr-only">Email address</label>
+                        <input type="text" class="form-control" id="@form("userName").id" name="@form("userName").name"  placeholder="username">
+                    </div>
+                    <div class="form-group @if(form("password").hasErrors) {has-error}">
+                        <label for="reg_password" class="sr-only">Password</label>
+                        <input type="password" class="form-control"id="@form("password").id" name="@form("password").name" placeholder="password">
+                    </div>
+                    <div class="form-group ">
+                        <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+                        <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
+                    </div>
+
+                    <div class="form-group @if(form("email").hasErrors) {has-error}">
+                        <label for="reg_email" class="sr-only">Email</label>
+                        <input type="text" class="form-control" id="@form("email").id" name="@form("email").name" placeholder="email">
+                    </div>
+                    <div class="form-group @if(form("fullName").hasErrors) {has-error}">
+                        <label for="reg_fullname" class="sr-only">Full Name</label>
+                        <input type="text" class="form-control" id="@form("fullName").id" name="@form("fullName").name" placeholder="full name">
+                    </div>
+
+
+                    <div class="form-group login-group-checkbox">
+                        <input type="checkbox" class="" id="reg_agree" name="reg_agree">
+                        <label for="reg_agree">i agree with <a href="#">terms</a></label>
+                    </div>
+
+
+                </div>
+                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+                @if(flash.containsKey("error")) {
+                <div id="error-message" class="text-danger">
+                @flash.get("error")
+                </div>
+            }
+                }
+            </div>
+            <div class="etc-login-form">
+                <p>already have an account? <a href="#">login here</a></p>
+            </div>
+
+    </div>
+        <!-- end:Main Form -->
+</div>
+<script src="@routes.Assets.versioned("js/bootstrap.min.js")" type="text/javascript"></script>
+<script src="@routes.Assets.versioned("js/custom.js")" type="text/javascript"></script>
+<script src="@routes.Assets.versioned("js/jquery.validate.js")" type="text/javascript"></script>
+
+
+
+
+<script>
+        addEventListener('load', prettyPrint, false);
+        $(document).ready(function(){
+            $('pre').addClass('prettyprint linenums');
+        });
+</script>

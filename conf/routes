@@ -1,0 +1,46 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+GET     /                           controllers.Application.welcomePage
+
+GET     /login                      controllers.Application.login
+POST    /login                      controllers.Application.postLogin()
+GET     /register                   controllers.Application.register
+GET     /loginHelp                  controllers.Application.loginHelp
+GET      /generate                  controllers.Application.generate
+GET     /templates                  controllers.Application.templates
+GET     /logout                     controllers.Application.logout
+POST    /register                   controllers.Application.postRegister
+
+GET     /login/:id                  controllers.Application.profile(id:String)
+
+#routes for learning the cards
+GET     /learn/:deckID              controllers.LearnController.learnCard(deckID:String,cardID:java.util.UUID)
+GET     /learn/:id/settings         controllers.LearnController.learnSettings(id:String)
+GET     /leaner/:id/learnDeck        controllers.LearnController.learnDeck(id:String)
+GET     /leaner/learnAll       controllers.LearnController.learnAll()
+POST    /learn/deckID               controllers.LearnController.updateCard()
+
+
+#routes for learning the decks and deck managedment
+GET     /learn/:id                  controllers.LearnController.learn(id:String)
+GET     /index/:id                  controllers.LearnController.editDeck(id:String,p:Int ?= 0, s ?= "repNum", o ?= "asc", f ?= "")
+GET     /learn                      controllers.LearnController.learnDecks
+GET     /index                      controllers.LearnController.index
+GET     /newDeck                    controllers.LearnController.createDeck
+POST    /newDeck                    controllers.LearnController.postCreateDeck
+POST    /cardCreation/:id               controllers.LearnController.postCardCreation(id:String,p:Int ?= 0, s ?= "repNum", o ?= "asc", f ?= "")
+POST    /cardDeletion               controllers.LearnController.postCardDeletion
+POST    /cardEdit                   controllers.LearnController.postCardEdit
+
+
+
+# An example controller showing a sample home page
+#GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

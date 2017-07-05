@@ -1,0 +1,12 @@
+@(page: String, isLoggedIn: Boolean,profile: Profile)
+@import views.html.notLogged. layoutN
+
+@layout(page, isLoggedIn, profile){@layoutN(isLoggedIn)} {
+    <div class ="container">
+        <div class = "jumbotron">
+            <h1>Welcome back @profile.userName </h1>
+            <h3>Choose one of the options on the top tool bar to get started</h3>
+        </div>
+    </div>
+
+}
