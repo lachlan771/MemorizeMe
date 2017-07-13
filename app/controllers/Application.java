@@ -57,6 +57,7 @@ Application extends Controller {
 
     public static boolean isValid(String email, String password) {
         //If the email and string do no equal null
+        int i =0;
         Profile profile = Profile.find.byId(email);
         return ((email != null)
                 &&
