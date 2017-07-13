@@ -1,4 +1,4 @@
-name := """play-java"""
+name := """MemorizeMe"""
 
 version := "1.0-SNAPSHOT"
 
