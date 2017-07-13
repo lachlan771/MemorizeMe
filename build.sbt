@@ -1,4 +1,4 @@
-name := """MemorizeMe"""
+name := "MemorizeMe"
 
 version := "1.0-SNAPSHOT"
 
