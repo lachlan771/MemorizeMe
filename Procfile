@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/MemorizeMe-Dhttp.port=${PORT}
+web: target/universal/stage/bin/MemorizeMe -Dhttp.port=${PORT}
