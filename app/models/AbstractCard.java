@@ -84,8 +84,9 @@ public abstract class AbstractCard extends Model {
         if (responseQuality>4){
             //5.After each repetition modify the E-Factor of the recently repeated item according to the formula:
 
-            repNum = new BigDecimal(repNum.doubleValue()+1);
-            //repNum = new BigDecimal(1);
+            
+            repNum = repNum.add(new BigDecimal(1));
+            //repNum = new BigDecimal(1)
             eFactor = eFactor.add(new BigDecimal(.1-(5-responseQuality)*(0.08+(5-responseQuality)*0.02)));
             //If EF is less than 1.3 then let EF be 1.3.
             if(eFactor.compareTo(new BigDecimal(1.3))<0){
