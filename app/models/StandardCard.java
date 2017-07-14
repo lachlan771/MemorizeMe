@@ -21,6 +21,7 @@ public class StandardCard extends AbstractCard {
     public StandardCard(String question,String answer,Deck deck) {
         this.question=question;
         this.answer=answer;
+        this.repNum = new BigDecimal(0);
         //"At the moment of introducing an item into a SuperMemo database, its E-Factor was assumed to equal 2.5."
         this.eFactor = new BigDecimal(2.5);
         this.responseQuality=0;
