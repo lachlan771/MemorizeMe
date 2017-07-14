@@ -9,5 +9,5 @@ libraryDependencies += jdbc
 libraryDependencies += javaJdbc
 libraryDependencies += cache
 libraryDependencies += javaWs
-libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.36"
+//libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.36"
 libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
