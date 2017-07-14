@@ -2,6 +2,7 @@ package models;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,7 +22,7 @@ public class StandardCard extends AbstractCard {
         this.question=question;
         this.answer=answer;
         //"At the moment of introducing an item into a SuperMemo database, its E-Factor was assumed to equal 2.5."
-        this.eFactor = 2.5;
+        this.eFactor = new BigDecimal(2.5);
         this.responseQuality=0;
         this.creationDate = new Date();
         this.nextRep = new Date();
