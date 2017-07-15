@@ -25,7 +25,7 @@ public abstract class AbstractCard extends Model {
     //The id of the deck that it belongs to
 
     public int responseQuality;
-    public BigDecimal repNum;
+    public int repNum;
     public BigDecimal eFactor;
     //Date of the card creation
     @Formats.DateTime(pattern="dd/MM/yyyy")
@@ -56,20 +56,20 @@ public abstract class AbstractCard extends Model {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(today);
         //I(1)=1
-        if(repNum.equals(new BigDecimal(1))){
+        if(repNum==1){
 
             calendar.add(Calendar.DATE,1);
             nextRep=calendar.getTime();
 
         }
-        else if(repNum.equals(new BigDecimal(2))){
+        else if(repNum==2){
 
             calendar.add(Calendar.DATE,6);
             nextRep=calendar.getTime();
 
         }
         else{
-            BigDecimal daysTillNextRep =  (repNum .subtract(new BigDecimal(1)) ).multiply(eFactor);
+            BigDecimal daysTillNextRep = new BigDecimal ((repNum -1)*(eFactor.intValue()));
 
             calendar.add(Calendar.DATE,(int)(Math.ceil(daysTillNextRep.floatValue())));
             nextRep=calendar.getTime();
@@ -86,7 +86,7 @@ public abstract class AbstractCard extends Model {
 
 
             //repNum = repNum.add(new BigDecimal(1));
-            repNum = new BigDecimal(1);
+            repNum ++;
             eFactor = eFactor.add(new BigDecimal(.1-(5-responseQuality)*(0.08+(5-responseQuality)*0.02)));
             //If EF is less than 1.3 then let EF be 1.3.
             if(eFactor.compareTo(new BigDecimal(1.3))<0){
