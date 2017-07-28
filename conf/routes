@@ -33,6 +33,9 @@ POST    /cardCreation/:id               controllers.LearnController.postCardCrea
 POST    /cardDeletion               controllers.LearnController.postCardDeletion
 POST    /cardEdit                   controllers.LearnController.postCardEdit
 
+#deck Generatioom
+POST   /test                         controllers.GenerateController.postGenerate
+
 
 
 # An example controller showing a sample home page

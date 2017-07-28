@@ -7,7 +7,7 @@ create table abstract_card (
   dtype                         varchar(31) not null,
   id                            uuid not null,
   response_quality              integer,
-  rep_num                       decimal(38),
+  rep_num                       integer,
   e_factor                      decimal(38),
   creation_date                 timestamp,
   next_rep                      timestamp,

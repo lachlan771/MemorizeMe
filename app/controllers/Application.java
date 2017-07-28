@@ -13,11 +13,13 @@ import play.data.FormFactory;
 import play.mvc.Controller;
 //Views imports
 import views.formData.RegisterFormData;
+import views.formData.generateCardsTextForm;
 import views.html.welcomePage;
 import views.formData.LoginFormData;
 import views.html.login;
 import views.html.register;
 import views.html.profileWelcome;
+import views.html.generate.*;
 
 
 
@@ -128,7 +130,8 @@ Application extends Controller {
     }
     @Security.Authenticated(Secured.class)
     public Result generate(){
-        return TODO;
+        Form<generateCardsTextForm> formData = formFactory.form(generateCardsTextForm.class);
+        return ok(generateHome.render("Welcome", Secured.isLoggedIn(ctx()),Secured.getUserInfo(ctx()),formData));
     }
     @Security.Authenticated(Secured.class)
     public Result templates(){
